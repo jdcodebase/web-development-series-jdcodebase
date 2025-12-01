@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>06-Forms</title>
+  </head>
+
+  <body>
+    <!-- Main Form -->
+    <form action="">
+      <!-- Full Name -->
+      <label for="FullName">Full Name</label>
+      <input type="text" id="FullName" required placeholder="Enter your Name" />
+      <br /><br />
+
+      <!-- Password Field -->
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        minlength="5"
+        maxlength="10"
+        placeholder="Enter Password"
+      />
+      <br /><br />
+
+      <!-- Email Field -->
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your Email" />
+      <br /><br />
+
+      <!-- Number Input -->
+      <label for="age">Age</label>
+      <input type="number" id="age" min="1" max="10" placeholder="Enter Age" />
+      <br /><br />
+
+      <!-- Checkbox Group -->
+      <label>Skills</label> <br />
+      <input type="checkbox" id="html" /> HTML <br />
+      <input type="checkbox" id="css" /> CSS <br />
+      <input type="checkbox" id="js" /> JavaScript <br />
+      <br /><br />
+
+      <!-- Radio Button Group -->
+      <label>Gender</label> <br />
+      <input type="radio" name="gender" value="male" /> Male <br />
+      <input type="radio" name="gender" value="female" /> Female <br />
+      <br />
+
+      <!-- File Upload -->
+      <label for="resume">Resume</label>
+      <input type="file" id="resume" />
+      <br /><br />
+
+      <!-- Textarea -->
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        rows="4"
+        cols="40"
+        placeholder="Write Your Message..."
+      ></textarea>
+      <br /><br />
+
+      <!-- Select Dropdown -->
+      <label for="country">Country</label>
+      <select id="country">
+        <option value="india">India</option>
+        <option value="usa">USA</option>
+        <option value="uk">UK</option>
+      </select>
+
+      <!-- Dropdown with Optgroup -->
+      <label for="region">Region</label>
+      <select id="region">
+        <optgroup label="Asia">
+          <option value="india">India</option>
+          <option value="china">China</option>
+        </optgroup>
+
+        <optgroup label="Europe">
+          <option value="uk">UK</option>
+          <option value="france">France</option>
+        </optgroup>
+      </select>
+      <br /><br />
+
+      <!-- Fieldset Group -->
+      <fieldset>
+        <legend>Personal Info</legend>
+
+        <label for="name">Name</label>
+        <input type="text" id="name" />
+      </fieldset>
+      <br /><br />
+
+      <!-- Color Picker -->
+      <label>Choose Color</label>
+      <input type="color" />
+      <br /><br />
+
+      <!-- Buttons -->
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+      <button type="button">Just a Button</button>
+    </form>
+  </body>
+</html>
