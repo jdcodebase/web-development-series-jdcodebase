@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8 - Inline vs Block vs Inline-block</title>
+
+    <style>
+      /* Inline-block Example Style */
+      .box {
+        display: inline-block; /* Behaves like inline + block */
+        width: 100px; /* Width works */
+        height: 50px; /* Height works */
+        background: lightblue; /* Background color */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Block Elements Example -->
+    <!-- <p> and <div> are block elements -->
+    <p>This is a block element</p>
+    <div>It starts on a new line</div>
+
+    <hr />
+
+    <!-- Inline Elements Example -->
+    <!-- span is an inline element -->
+    <!-- width and height will NOT work here -->
+    <span style="background: black; color: white"> Hello </span>
+
+    <span>World</span>
+
+    <hr />
+
+    <!-- Inline-block Elements Example -->
+    <!-- div elements behaving as inline-block -->
+    <div class="box"></div>
+    <div class="box"></div>
+  </body>
+</html>
