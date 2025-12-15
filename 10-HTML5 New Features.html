@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10 - HTML5 New Features</title>
+  </head>
+
+  <body>
+    <!-- Details & Summary -->
+    <details open>
+      <summary>What is HTML?</summary>
+      <p>HTML stands for HyperText Markup Language.</p>
+    </details>
+
+    <br /><br />
+
+    <!-- Dialog -->
+    <button onclick="openDialog()">Open Dialog</button>
+
+    <dialog id="myDialog">
+      <p>This is a dialog</p>
+      <button onclick="closeDialog()">Close</button>
+    </dialog>
+
+    <br /><br />
+
+    <!-- Progress -->
+    <label>File Upload</label>
+    <br />
+    <progress max="100"></progress>
+
+    <br /><br />
+
+    <!-- Meter -->
+    <label>Battery Level:</label>
+    <br />
+    <meter value="30" min="0" max="100" low="20" high="70" optimum="50"></meter>
+
+    <br /><br />
+
+    <!-- HTML5 Input Types -->
+    <h3>HTML5 Input Types</h3>
+
+    <form>
+      <label>Email:</label><br />
+      <input type="email" placeholder="Enter your email" />
+      <br /><br />
+
+      <label>Website URL:</label><br />
+      <input type="url" placeholder="https://example.com" />
+      <br /><br />
+
+      <label>Phone Number:</label><br />
+      <input type="tel" placeholder="Enter phone number" />
+      <br /><br />
+
+      <label>Age:</label><br />
+      <input type="number" min="1" max="100" />
+      <br /><br />
+
+      <label>Range:</label><br />
+      <input type="range" />
+      <br /><br />
+
+      <label>Date:</label><br />
+      <input type="date" />
+      <br /><br />
+
+      <label>Time:</label><br />
+      <input type="time" />
+      <br /><br />
+
+      <label>Pick a Color:</label><br />
+      <input type="color" />
+      <br /><br />
+
+      <label>Search:</label><br />
+      <input type="search" placeholder="Search here..." />
+    </form>
+
+    <!-- JavaScript -->
+    <script>
+      function openDialog() {
+        document.getElementById("myDialog").showModal();
+      }
+
+      function closeDialog() {
+        document.getElementById("myDialog").close();
+      }
+    </script>
+  </body>
+</html>
