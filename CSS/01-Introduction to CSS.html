@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Introduction to CSS</title>
+
+    <!-- ************ INTERNAL CSS ************
+         CSS written inside <style> tag
+         Applies to the entire page
+    -->
+    <style>
+      h1 {
+        color: blue;
+      }
+
+      p {
+        font-size: 20px;
+      }
+    </style>
+
+    <!-- ************ EXTERNAL CSS ************
+         Separate CSS file (style.css)
+         Best for real projects
+         Reusable + easy to maintain
+    -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ************ INLINE CSS ************
+         CSS written directly in the element
+         Applies only to this element
+         Not recommended for big projects
+    -->
+    <h1 style="color: red">Hello from Inline CSS</h1>
+
+    <!-- This heading is styled using Internal CSS -->
+    <h1>Hello from Internal CSS</h1>
+
+    <!-- This paragraph is styled using Internal CSS -->
+    <p>This is a paragraph styled using Internal CSS</p>
+  </body>
+</html>
