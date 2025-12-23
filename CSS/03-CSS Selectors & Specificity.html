@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Selectors & Specificity – JDCodebase</title>
+
+    <style>
+      /* ---------------------------
+       BASIC SELECTORS
+    ----------------------------*/
+      p {
+        color: red;
+      }
+
+      .info {
+        color: blue;
+      }
+
+      #box {
+        background: black;
+        color: white;
+        padding: 10px;
+      }
+
+      /* Universal Selector */
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      /* Grouping Selector */
+      h1,
+      h2 {
+        color: green;
+      }
+
+      /* Descendant Selector */
+      .container p {
+        color: purple;
+      }
+
+      /* Child Selector */
+      .container > p {
+        color: orange;
+        font-weight: bold;
+      }
+
+      /* Sibling Selectors */
+      h3 + p {
+        color: brown;
+      }
+
+      h3 ~ p {
+        background: #e6e6e6;
+      }
+
+      /* Attribute Selector */
+      input[type="text"] {
+        border: 2px solid blue;
+        padding: 5px;
+      }
+
+      a[target="_blank"] {
+        color: green;
+      }
+
+      /* Pseudo Classes */
+      a:hover {
+        color: red;
+      }
+
+      input:focus {
+        border: 2px solid green;
+        outline: none;
+      }
+
+      li:first-child {
+        color: blue;
+      }
+
+      li:last-child {
+        color: darkorange;
+      }
+
+      /* ---------------------------
+       SPECIFICITY EXAMPLE
+    ----------------------------*/
+      p {
+        color: red;
+      }
+
+      .parent p {
+        color: blue;
+      }
+
+      #special p {
+        color: green;
+      }
+
+      /* !important Example */
+      .important-text {
+        color: purple !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>CSS Selectors & Specificity</h1>
+    <h2>JDCodebase Web Development Series</h2>
+
+    <hr />
+
+    <!-- BASIC SELECTORS -->
+    <h2>Basic Selectors</h2>
+    <p>This is a normal paragraph (element selector)</p>
+    <p class="info">This paragraph uses a class selector</p>
+    <div id="box">This div uses an ID selector</div>
+
+    <hr />
+
+    <!-- DESCENDANT & CHILD -->
+    <h2>Descendant & Child Selectors</h2>
+
+    <div class="container">
+      <p>Direct child paragraph</p>
+
+      <section>
+        <p>Nested paragraph (descendant)</p>
+      </section>
+    </div>
+
+    <p>Outside paragraph</p>
+
+    <hr />
+
+    <!-- SIBLINGS -->
+    <h2>Sibling Selectors</h2>
+    <h3>Heading 3</h3>
+    <p>Adjacent sibling paragraph</p>
+    <p>General sibling paragraph</p>
+
+    <hr />
+
+    <!-- ATTRIBUTE SELECTORS -->
+    <h2>Attribute Selectors</h2>
+
+    <input type="text" placeholder="Type here..." />
+    <br /><br />
+    <a href="#" target="_blank">Open in new tab</a>
+
+    <hr />
+
+    <!-- PSEUDO CLASSES -->
+    <h2>Pseudo Class Selectors</h2>
+
+    <a href="#">Hover on this link</a>
+    <br /><br />
+
+    <input type="text" placeholder="Click to focus" />
+
+    <ul>
+      <li>First Item</li>
+      <li>Middle Item</li>
+      <li>Last Item</li>
+    </ul>
+
+    <hr />
+
+    <!-- SPECIFICITY -->
+    <h2>Specificity Example</h2>
+
+    <div class="parent">
+      <div id="special">
+        <p>This paragraph is affected by multiple selectors</p>
+      </div>
+    </div>
+
+    <p class="important-text">This text uses !important</p>
+
+    <hr />
+
+    <h2>End of Demo</h2>
+    <p>Practice and experiment to understand better!</p>
+  </body>
+</html>
