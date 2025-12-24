@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Box Model - Basic Example</title>
+
+    <style>
+      .box {
+        width: 300px;
+        background: lightblue;
+        padding: 20px;
+        border: 5px solid blue;
+        margin: 20px;
+      }
+
+      .border-box {
+        width: 300px;
+        background: lightgreen;
+        padding: 20px;
+        border: 5px solid green;
+        margin: 20px;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>CSS Box Model</h1>
+
+    <h3>Default: content-box</h3>
+    <div class="box">
+      width = 300px <br />
+      padding = 20px <br />
+      border = 5px <br /><br />
+
+      Total width = 300 + 20 + 20 + 5 + 5 = 350px
+    </div>
+
+    <h3>box-sizing: border-box</h3>
+    <div class="border-box">
+      width = 300px <br />
+      padding = 20px <br />
+      border = 5px <br />
+      box-sizing = border-box <br /><br />
+
+      Total width = 300px (padding + border included)
+    </div>
+  </body>
+</html>
