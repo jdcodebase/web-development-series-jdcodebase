@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Colors Demo</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 80px;
+        margin: 10px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hex {
+        background: #ff5733;
+      }
+      .rgb {
+        background: rgb(0, 128, 255);
+      }
+
+      .hsl {
+        background: hsl(200, 100%, 50%);
+      }
+
+      .rgba {
+        background: rgba(255, 0, 0, 0.5);
+      }
+
+      .px {
+        font-size: 20px;
+      }
+      .em {
+        font-size: 2em;
+      }
+
+      .rem {
+        font-size: 2rem;
+      }
+
+      .vw {
+        font-size: 5vw;
+      }
+
+      .box {
+        width: calc(100% - 50px);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Colors Demo</h1>
+
+    <div class="box hex">HEX Color</div>
+    <div class="box rgb">RGB Color</div>
+    <div class="box hsl">HSL Color</div>
+    <div class="box rgba">RGBA Color</div>
+
+    <h2>CSS Units Demo</h2>
+
+    <p class="px">This is px text</p>
+    <p class="em">This is em text</p>
+    <p class="rem">This is rem text</p>
+    <p class="vw">This is vw text</p>
+  </body>
+</html>
