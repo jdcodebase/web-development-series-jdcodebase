@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>08-Display, Visibility & Overflow</title>
+
+    <style>
+      /* Common Style */
+      .box {
+        background: lightblue;
+        margin: 10px 0;
+        padding: 10px;
+        border: 2px solid blue;
+      }
+
+      /* BLOCK */
+      .block {
+        display: block;
+      }
+
+      /* INLINE */
+      .inline {
+        display: inline;
+        background: lightgreen;
+        border: 2px solid green;
+      }
+
+      /* INLINE BLOCK */
+      .ib {
+        display: inline-block;
+        width: 120px;
+        height: 80px;
+        background: lightcoral;
+        border: 2px solid red;
+        margin-right: 8px;
+      }
+
+      /* DISPLAY NONE */
+      .hide {
+        display: none;
+      }
+
+      /* VISIBILITY */
+      .vhide {
+        visibility: hidden;
+      }
+
+      /* Overflow Containers */
+      .container {
+        width: 220px;
+        height: 90px;
+        border: 2px solid black;
+        margin: 10px 0;
+        padding: 5px;
+      }
+
+      .visible {
+        overflow: visible;
+        background: #d5e9ff;
+      }
+
+      .hidden {
+        overflow: hidden;
+        background: #ffd8d8;
+      }
+
+      .scroll {
+        overflow: scroll;
+        background: #ffe7a0;
+      }
+
+      .auto {
+        overflow: auto;
+        background: #c6ffc6;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- BLOCK -->
+    <h2>Block Elements Demo</h2>
+    <div class="box block">This is a DIV (Block)</div>
+    <p class="box block">This is a Paragraph (Block)</p>
+
+    <!-- INLINE -->
+    <h2>Inline Elements Demo</h2>
+    <span class="inline">Span 1</span>
+    <span class="inline">Span 2</span>
+    <a class="inline">Link Inline</a>
+
+    <!-- INLINE BLOCK -->
+    <h2>Inline-Block Demo</h2>
+    <div class="ib">Box 1</div>
+    <div class="ib">Box 2</div>
+    <div class="ib">Box 3</div>
+
+    <!-- DISPLAY NONE -->
+    <h2>Display None Demo</h2>
+    <p>This is visible text</p>
+    <p class="hide">This text is hidden (display:none)</p>
+    <p>This text is also visible</p>
+
+    <!-- VISIBILITY -->
+    <h2>Visibility Demo</h2>
+    <p>Visible text</p>
+    <p class="vhide">This is hidden but space is there (visibility:hidden)</p>
+    <p>Next text</p>
+
+    <!-- OVERFLOW -->
+    <h2>Overflow Demo</h2>
+
+    <div class="container visible">
+      Overflow: visible (default). Content will spill outside the box if it is
+      too long. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Necessitatibus.
+    </div>
+
+    <div class="container hidden">
+      Overflow: hidden. Extra content is clipped. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Necessitatibus.
+    </div>
+
+    <div class="container scroll">
+      Overflow: scroll. Scrollbars always visible. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Necessitatibus.
+    </div>
+
+    <div class="container auto">
+      Overflow: auto. Scrollbars appear only if needed. Lorem ipsum dolor sit
+      amet consectetur adipisicing elit. Necessitatibus.
+    </div>
+  </body>
+</html>
