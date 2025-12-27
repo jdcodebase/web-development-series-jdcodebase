@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Backgrounds & Borders</title>
+
+    <style>
+      .box {
+        width: 500px;
+        height: 500px;
+
+        /* Border */
+        border: 10px solid black;
+        border-radius: 20px;
+
+        /* Background Color */
+        background-color: lightblue;
+
+        /* Background Image + Gradient */
+        background-image: url("../assets/dog.webp"),
+          linear-gradient(to right, red, blue);
+
+        /* Do not repeat image */
+        background-repeat: no-repeat;
+
+        /* Fit image properly */
+        background-size: cover;
+
+        /* Center image */
+        background-position: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Background & Borders Demo</h1>
+
+    <div class="box">This is a simple box</div>
+  </body>
+</html>
