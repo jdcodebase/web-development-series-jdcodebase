@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>09-Width, Height & Layout Basics</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Example 1 */
+      .fixed-box {
+        background: lightblue;
+        width: 300px;
+        height: 200px;
+        padding: 20px;
+        border: 5px solid black;
+        margin: 20px;
+      }
+
+      /* Example 2 */
+      .responsive-box {
+        background: pink;
+        width: 100%;
+        max-width: 50%;
+        padding: 20px;
+        border: 5px solid black;
+        margin: 20px auto;
+        text-align: center;
+      }
+
+      .parent {
+        width: 50%;
+        background: lightgray;
+        border: 5px solid black;
+        margin: 20px auto;
+        padding: 20px;
+      }
+
+      .child {
+        background: pink;
+        border: 3px solid black;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Fixed Size Box -->
+    <div class="fixed-box">This is a fixed width & height box</div>
+
+    <!-- Responsive max-width Example -->
+    <div class="responsive-box">
+      This box uses width: 100% with max-width: 50%
+    </div>
+
+    <!-- Percentage Based Layout -->
+    <div class="parent">
+      <div class="child" style="width: 33%">Child Box 33%</div>
+      <div class="child" style="width: 66%">Child Box 66%</div>
+      <div class="child" style="width: 99%">Child Box 99%</div>
+    </div>
+  </body>
+</html>
