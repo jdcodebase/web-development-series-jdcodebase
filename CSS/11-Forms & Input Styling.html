@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11-Forms & Input Styling</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      form {
+        max-width: 50%;
+        border: 2px solid black;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #000;
+        border-radius: 6px;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #000;
+        border-radius: 6px;
+        font-size: 16px;
+        height: 120px;
+        margin-bottom: 10px;
+        resize: vertical;
+      }
+
+      button {
+        background: #007bff;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 6px;
+        border: 2px solid black;
+        cursor: pointer;
+        font-weight: 600;
+        width: 50%;
+        margin: 10px auto;
+        display: block;
+      }
+
+      button:hover {
+        background: #0056b3;
+      }
+
+      /* FIXED: added comma */
+      input:focus,
+      textarea:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+
+      button:active {
+        transform: scale(0.98);
+      }
+
+      button:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+      }
+
+      input:disabled {
+        background: #f0f0f0;
+      }
+
+      ::placeholder {
+        color: #888;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form action="">
+      <input type="text" placeholder="Enter Your Name" />
+      <textarea placeholder="Enter your message"></textarea>
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
