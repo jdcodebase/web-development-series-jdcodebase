@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12-Flexbox (Complete Guide)</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* ================= Flexbox Basic Example ================= */
+      .container {
+        border: 2px solid black;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: stretch;
+        height: 300px;
+      }
+
+      .box {
+        background: lightblue;
+        padding: 20px;
+        border: 1px solid black;
+        font-size: 20px;
+      }
+
+      .box:nth-child(2) {
+        align-self: center;
+      }
+
+      /* ================= Navbar Example ================= */
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border: 1px solid black;
+        margin-top: 30px;
+      }
+
+      .nav ul {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+      }
+
+      /* ================= Cards Example ================= */
+      .cards {
+        border: 2px solid black;
+        display: flex;
+        width: 500px;
+        gap: 20px;
+        margin: 30px;
+        /* flex-wrap: wrap;   <-- enable this when teaching wrap */
+      }
+
+      .card {
+        background: rgb(61, 132, 141);
+        width: 200px;
+        height: 100px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* ================= Perfect Center Example ================= */
+      .center-box {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Flex Container Example -->
+    <div class="container">
+      <div class="box">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+    </div>
+
+    <!-- Navbar Example -->
+    <header class="nav">
+      <h2>Logo</h2>
+      <ul>
+        <li>Home</li>
+        <li>Services</li>
+        <li>Contact</li>
+      </ul>
+    </header>
+
+    <!-- Cards Layout Example -->
+    <div class="cards">
+      <div class="card">Card 1</div>
+      <div class="card">Card 2</div>
+      <div class="card">Card 3</div>
+    </div>
+
+    <!-- Perfect Center Example -->
+    <div class="center-box">
+      <p>Hello</p>
+    </div>
+  </body>
+</html>
