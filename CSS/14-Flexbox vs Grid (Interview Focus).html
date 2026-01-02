@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>14 - Flexbox vs Grid (Interview Focus)</title>
+
+    <style>
+      /* ---------------- FLEXBOX STYLES ---------------- */
+      .flex-container {
+        display: flex; /* Activate Flexbox */
+        justify-content: center; /* Horizontal alignment */
+        align-items: center; /* Vertical alignment */
+        gap: 10px; /* Space between items */
+        padding: 10px;
+        height: 100vh; /* Full viewport height */
+        border: 2px solid black;
+      }
+
+      .box {
+        background-color: lightblue;
+        padding: 20px;
+        font-size: 24px;
+        text-align: center;
+        border: 1px solid black;
+      }
+
+      /* ---------------- GRID STYLES ---------------- */
+      .grid-container {
+        display: grid; /* Activate Grid */
+        grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+        gap: 10px;
+        padding: 10px;
+      }
+
+      .g {
+        background-color: lightgreen;
+        padding: 20px;
+        font-size: 24px;
+        text-align: center;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- FLEXBOX EXAMPLE -->
+    <div class="flex-container">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+    </div>
+
+    <!-- GRID EXAMPLE -->
+    <div class="grid-container">
+      <div class="g">1</div>
+      <div class="g">2</div>
+      <div class="g">3</div>
+      <div class="g">4</div>
+      <div class="g">5</div>
+      <div class="g">6</div>
+    </div>
+  </body>
+</html>
