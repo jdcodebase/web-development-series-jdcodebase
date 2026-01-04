@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15 - Responsive Design & Media Queries</title>
+
+    <style>
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      /* Container */
+      .container {
+        display: flex;
+        gap: 20px;
+      }
+
+      /* Box */
+      .box {
+        background: lightblue;
+        padding: 40px;
+        flex: 1;
+        text-align: center;
+        font-size: 24px;
+      }
+
+      /* Mobile / Tablet */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .box {
+          background: yellowgreen;
+          font-size: 18px;
+        }
+      }
+
+      /* Desktop */
+      @media (min-width: 768px) {
+        .container {
+          flex-direction: row;
+        }
+
+        .box {
+          background: red;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Responsive Design Demo</h1>
+
+    <div class="container">
+      <div class="box">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+    </div>
+  </body>
+</html>
