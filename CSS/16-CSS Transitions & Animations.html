@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>16-CSS Transitions & Animations</title>
+    <style>
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Center content */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      /* Box style */
+      .box {
+        width: 150px;
+        height: 150px;
+        background: lightblue;
+
+        transition: background 0.3s ease;
+        transition: all 0.3s ease;
+      }
+
+      /* Hover effects (Transition) */
+      .box:hover {
+        background: tomato;
+        transform: scale(1.1);
+        transform: rotate(60deg);
+        transform: translateY(-10px);
+        transform: skewX(10deg);
+      }
+
+      /* Animation keyframes */
+      @keyframes moveBox {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(100px);
+        }
+      }
+
+      .box {
+        animation: moveBox 1s ease-in-out infinite alternate;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>
