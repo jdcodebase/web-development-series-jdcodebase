@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17 - Pseudo Elements (before & after)</title>
+
+    <style>
+      /* Reset default browser styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Decorative underline using ::after */
+      h2::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: crimson;
+        margin-top: 8px;
+      }
+
+      /* Card container */
+      .card {
+        position: relative;
+        width: 200px;
+        height: 120px;
+        margin: 30px 0;
+        background: #f4f4f4;
+      }
+
+      /* Decorative circle on card */
+      .card::before {
+        content: "";
+        width: 40px;
+        height: 40px;
+        background: teal;
+        border-radius: 50%;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+      }
+
+      /* Icon container */
+      .icon {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        background: #ddd;
+        margin-top: 20px;
+      }
+
+      /* Notification badge using ::after */
+      .icon::after {
+        content: "3";
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        background: red;
+        color: white;
+        font-size: 15px;
+        padding: 4px 6px;
+        border-radius: 50%;
+      }
+
+      /* Highlighted text */
+      .highlight {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Highlight background using ::before */
+      .highlight::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 40px;
+        background: yellow;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Pseudo <span class="highlight">Elements</span> Explained</h2>
+
+    <div class="card"></div>
+
+    <div class="icon"></div>
+  </body>
+</html>
