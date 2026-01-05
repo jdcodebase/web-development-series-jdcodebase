@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>18 - CSS Variables (Custom Properties)</title>
+
+    <style>
+      /* Reset default browser styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Global CSS Variables */
+      :root {
+        --primary-color: #abe622;
+        --padding: 16px;
+      }
+
+      /* Button styling using global variables */
+      button {
+        background-color: var(--primary-color);
+        padding: var(--padding);
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* Card component with local variables */
+      .card {
+        --card-bg: #c92828;
+        --heading-bg: #c0bd18;
+
+        background-color: var(--card-bg);
+        padding: 20px;
+        margin-top: 20px;
+      }
+
+      /* Heading uses variable from parent (.card) */
+      .card1 {
+        background-color: var(--heading-bg);
+        padding: 10px;
+        color: #000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button>Click me</button>
+
+    <div class="card">
+      Card
+      <h1 class="card1">Card1</h1>
+    </div>
+  </body>
+</html>
