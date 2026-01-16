@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11-DOM-Introduction</title>
+  </head>
+
+  <body>
+    <h1 class="headingClass" id="heading">
+      Welcome to <span style="visibility: hidden">DOM</span>
+    </h1>
+
+    <h2 id="subHeading">Frontend Dev</h2>
+
+    <p class="text">Learning JavaScript DOM</p>
+    <p class="text">Learning JS DOM</p>
+
+    <button>Click Me</button>
+
+    <img src="../assets/dog.webp" height="100" />
+
+    <script>
+      // Whole document object
+      console.log(document);
+
+      // Select element by ID
+      let heading = document.getElementById("heading");
+      console.log(heading);
+
+      // Select elements by class name
+      let texts = document.getElementsByClassName("text");
+      console.log(texts);
+      console.log(texts[1]);
+
+      // Select first matching element
+      let firstPara = document.querySelector(".text");
+      console.log(firstPara);
+
+      // Select all matching elements
+      let allItems = document.querySelectorAll(".text");
+      console.log(allItems);
+
+      // Read content
+      console.log(heading.innerHTML);
+      console.log(heading.textContent);
+
+      // Read attributes
+      console.log(heading.getAttribute("class"));
+      console.log(document.getElementsByTagName("img")[0].getAttribute("src"));
+    </script>
+  </body>
+</html>
