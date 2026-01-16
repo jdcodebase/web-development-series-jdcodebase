@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM Manipulation</title>
+
+    <style>
+      .active {
+        color: white;
+        background-color: green;
+        padding: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="title">Hello World</h1>
+    <p class="text">This is a paragraph</p>
+
+    <input type="text" id="nameInput" />
+
+    <button id="btn">Click Me</button>
+
+    <script>
+      // Selecting elements
+      let heading = document.getElementById("title");
+      let para = document.querySelector(".text");
+      let input = document.getElementById("nameInput");
+      let button = document.getElementById("btn");
+
+      // Changing text content
+      heading.textContent = "Welcome to DOM Manipulation";
+
+      // innerHTML vs textContent
+      para.innerHTML = "This is <b>Bold</b> text";
+      // para.textContent = "This is <b>Bold</b> text";
+
+      // Changing styles using JavaScript
+      // heading.style.color = "blue";
+      // heading.style.backgroundColor = "lightgray";
+      // heading.style.padding = "10px";
+
+      // Working with classList
+      // heading.classList.add("active");
+      // heading.classList.remove("active");
+      // heading.classList.toggle("active");
+
+      // Working with attributes
+      input.setAttribute("placeholder", "Enter Your Name");
+      input.removeAttribute("placeholder");
+
+      // Creating elements dynamically
+      let newHeading = document.createElement("h1");
+      newHeading.innerHTML =
+        "This heading is created using <b><i>JavaScript</i></b>";
+
+      document.body.appendChild(newHeading);
+
+      // Removing elements
+      newHeading.remove();
+
+      // Button click event
+      button.addEventListener("click", function () {
+        heading.textContent = "Button Clicked";
+        heading.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
