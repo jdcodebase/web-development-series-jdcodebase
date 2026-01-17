@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>13-Events-in-JavaScript</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 20px;
+      }
+
+      button {
+        background: #000;
+        color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        margin: 10px;
+        display: block;
+        cursor: pointer;
+      }
+
+      input {
+        padding: 5px 10px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        margin: 10px;
+        display: block;
+      }
+
+      a {
+        color: teal;
+        padding: 10px;
+        margin: 10px;
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Button using onclick in JavaScript -->
+    <button id="btn">Click Me</button>
+
+    <!-- Inline event example -->
+    <button onclick="sayHello()">Inline Button</button>
+
+    <!-- Input event example -->
+    <input type="text" id="name" placeholder="Type something" />
+
+    <!-- preventDefault example -->
+    <a href="https://google.com" id="link">Go</a>
+
+    <script>
+      // onclick event in JavaScript
+      document.getElementById("btn").onclick = function () {
+        alert("OnClick Button Clicked");
+      };
+
+      // Inline event function
+      function sayHello() {
+        alert("Hello!");
+      }
+
+      // addEventListener example
+      let btn = document.getElementById("btn");
+
+      btn.addEventListener("click", function () {
+        console.log("addEventListener Button Clicked");
+      });
+
+      // Event object example
+      btn.addEventListener("click", function (event) {
+        console.log(event);
+      });
+
+      // Input event
+      let input = document.getElementById("name");
+
+      input.addEventListener("input", function () {
+        console.log(input.value);
+      });
+
+      // Keyboard event
+      document.addEventListener("keydown", function () {
+        console.log("Key pressed");
+      });
+
+      // preventDefault example (currently commented)
+      document
+        .getElementById("link")
+        .addEventListener("click", function (event) {
+          // event.preventDefault();
+          console.log("Link Clicked");
+        });
+    </script>
+  </body>
+</html>
