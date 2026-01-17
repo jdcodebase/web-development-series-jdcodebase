@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>14-Forms-Handling-Validation</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      form {
+        width: 50%;
+        padding: 35px 0;
+        border: 1px solid #000;
+        border-radius: 5px;
+      }
+
+      input {
+        display: block;
+        width: 70%;
+        margin: auto;
+        padding: 5px 10px;
+        font-size: 18px;
+        border: 1px solid #000;
+        border-radius: 5px;
+      }
+
+      button {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        padding: 10px;
+        background-color: #000;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #error {
+        width: fit-content;
+        margin: 10px auto;
+        padding: 5px 20px;
+        background-color: rgb(209, 64, 64);
+        color: #fff;
+        font-size: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form id="signupForm">
+      <input type="text" id="username" placeholder="Enter username" />
+      <br /><br />
+
+      <input type="email" id="email" placeholder="Enter email" />
+      <br /><br />
+
+      <input type="password" id="password" placeholder="Enter password" />
+      <br /><br />
+
+      <button type="submit">Sign Up</button>
+
+      <p id="error"></p>
+    </form>
+
+    <script>
+      // Selecting the form element using its ID
+      const form = document.getElementById("signupForm");
+
+      // Selecting the paragraph element where error messages will be shown
+      const error = document.getElementById("error");
+
+      // Adding a submit event listener to the form
+      form.addEventListener("submit", function (event) {
+        // Prevents the default form behavior (page reload)
+        event.preventDefault();
+
+        // Getting values entered by the user
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        // Printing input values in console (for debugging / learning)
+        console.log(username, email, password);
+
+        // Clearing any previous error message
+        error.textContent = "";
+
+        // Validation: Check if username is empty
+        if (username === "") {
+          error.textContent = "Username is required";
+          return; // Stop further execution
+        }
+
+        // Validation: Check if email is empty
+        if (email === "") {
+          error.textContent = "Email is required";
+          return;
+        }
+
+        // Validation: Check password length
+        if (password.length < 6) {
+          error.textContent = "Password must be at least 6 characters";
+          return;
+        }
+
+        // If all validations pass
+        alert("Form Submitted Successfully");
+
+        // Logging success message in console
+        console.log("Form Submitted");
+      });
+    </script>
+  </body>
+</html>
