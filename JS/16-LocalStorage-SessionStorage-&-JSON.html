@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>16-LocalStorage-SessionStorage-&-JSON</title>
+  </head>
+  <body>
+    <script>
+      /* ================================
+         LOCAL STORAGE – BASIC EXAMPLE
+         ================================ */
+
+      // Save data in localStorage (key-value pair)
+      localStorage.setItem("name", "JD");
+
+      // Get data from localStorage
+      let myName = localStorage.getItem("name");
+      console.log(myName); // Output: JD
+
+      // Remove single item from localStorage
+      // localStorage.removeItem("name");
+
+      // Clear all localStorage data
+      // localStorage.clear();
+
+      /* ================================
+         SESSION STORAGE – BASIC EXAMPLE
+         ================================ */
+
+      // Save data in sessionStorage
+      // This data will be removed when the browser tab is closed
+      sessionStorage.setItem("city", "Delhi");
+
+      /* ================================
+         STORING OBJECT USING JSON
+         ================================ */
+
+      // JavaScript object
+      let user = {
+        name: "JD",
+        age: 25,
+      };
+
+      // Convert object to JSON string before saving
+      localStorage.setItem("user", JSON.stringify(user));
+
+      /* ================================
+         STORING ARRAY USING JSON
+         ================================ */
+
+      // JavaScript array
+      let fruits = ["apple", "pineapple"];
+
+      // Convert array to JSON string and save
+      localStorage.setItem("fruitsData", JSON.stringify(fruits));
+
+      // Get JSON string from localStorage
+      let fruitsData = localStorage.getItem("fruitsData");
+      console.log(fruitsData); // String format
+
+      /* ================================
+         JSON.parse() – CONVERT BACK
+         ================================ */
+
+      // Get user data as string
+      let userData = localStorage.getItem("user");
+      console.log(userData); // JSON string
+
+      // Convert JSON string back to object
+      console.log(JSON.parse(userData));
+
+      /* ================================
+         THEME SAVE EXAMPLE
+         ================================ */
+
+      // Save theme preference
+      localStorage.setItem("theme", "dark");
+
+      // Get theme from localStorage
+      let theme = localStorage.getItem("theme");
+
+      // Apply theme to body
+      document.body.className = theme;
+
+      /* ================================
+         TODO LIST STORAGE EXAMPLE
+         ================================ */
+
+      // Todo list array
+      let todoList = ["Learn JS", "Practice Code"];
+
+      // Save todo list using JSON
+      localStorage.setItem("todos", JSON.stringify(todoList));
+
+      // Get todos from localStorage
+      // If no data exists, use empty array
+      let savedTodos = JSON.parse(localStorage.getItem("todos")) || [];
+
+      console.log(savedTodos);
+    </script>
+  </body>
+</html>
