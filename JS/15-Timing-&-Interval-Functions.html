@@ -1,0 +1,92 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15-Timing-&-Interval-Functions</title>
+  </head>
+  <body>
+    <script>
+      /* ===============================
+         setTimeout() – BASIC EXAMPLE
+         Runs code once after a delay
+         =============================== */
+
+      setTimeout(() => {
+        console.log("Hello after 2 seconds");
+      }, 2000); // runs after 2 seconds
+
+      /* ===============================
+         setTimeout() with clearTimeout()
+         Canceling a timeout
+         =============================== */
+
+      const timeout = setTimeout(() => {
+        console.log("This will not run");
+      }, 3000);
+
+      console.log(timeout); // timeout ID
+      clearTimeout(timeout); // cancels the timeout
+
+      /* ===============================
+         Another clearTimeout example
+         =============================== */
+
+      const timeout2 = setTimeout(() => {
+        console.log("This will not run");
+      }, 3000);
+
+      console.log(timeout2); // timeout ID
+      clearTimeout(timeout2); // timeout cancelled
+
+      /* ===============================
+         setInterval() – BASIC EXAMPLE
+         Runs code repeatedly
+         =============================== */
+
+      const intervalID = setInterval(() => {
+        console.log("Running every second");
+      }, 1000);
+
+      console.log(intervalID); // interval ID
+      clearInterval(intervalID); // interval stopped immediately
+
+      /* ===============================
+         PRACTICAL EXAMPLE
+         Countdown Timer
+         =============================== */
+
+      let count = 10;
+
+      const timer = setInterval(() => {
+        console.log(count);
+        count--;
+
+        // stop timer when count is finished
+        if (count < 0) {
+          clearInterval(timer);
+          console.log("Time's up!");
+        }
+      }, 1000);
+
+      /* ===============================
+         PRACTICAL EXAMPLE
+         Loading Animation
+         =============================== */
+
+      let dots = 0;
+
+      const loader = setInterval(() => {
+        dots++;
+        console.log("Loading" + ".".repeat(dots));
+
+        // reset dots after 3
+        if (dots === 3) {
+          dots = 0;
+        }
+      }, 500);
+    </script>
+  </body>
+</html>
+```
