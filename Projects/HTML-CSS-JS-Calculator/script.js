@@ -1,7 +1,5 @@
 const buttons = document.querySelectorAll("button");
-
 const input = document.getElementById("inp");
-
 const ope = ["+", "-", "*", "/", "%"];
 
 buttons.forEach((button) => {
