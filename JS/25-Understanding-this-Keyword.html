@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>25 - Understanding this Keyword</title>
+  </head>
+
+  <body>
+    <button id="btn">Click Me</button>
+
+    <script>
+      /* =====================================================
+         1️⃣ GLOBAL SCOPE
+         ===================================================== */
+
+      // In browser, global `this` refers to the window object
+      console.log("Global this:");
+      console.log(this); // window
+
+      /* =====================================================
+         2️⃣ NORMAL FUNCTION (GLOBAL CALL)
+         ===================================================== */
+
+      function sayHello() {
+        console.log("Hello from Normal Function");
+        console.log(this); // window (non-strict mode)
+      }
+
+      // Called without any object
+      sayHello();
+
+      /* =====================================================
+         3️⃣ OBJECT WITH NORMAL & ARROW FUNCTIONS
+         ===================================================== */
+
+      const user = {
+        name: "JD",
+        age: 25,
+
+        // Normal function inside object
+        greet: function () {
+          console.log("greet from Normal Function (Object)");
+          console.log(this); // user object
+          console.log(this.age); // 25
+        },
+
+        // Nested object
+        obj: {
+          name: "JDCodebase",
+
+          greetObj: function () {
+            console.log("Nested Object Function");
+            console.log(this); // obj
+          },
+        },
+
+        // Arrow function inside object
+        greetArr: () => {
+          console.log("Arrow Greet Function");
+          console.log(this); // window
+          console.log(this.name); // undefined / empty
+        },
+      };
+
+      // Object method calls
+      user.greet();
+      console.log(user.obj.name);
+      user.obj.greetObj();
+      user.greetArr();
+
+      /* =====================================================
+         4️⃣ EVENT HANDLER (NORMAL FUNCTION)
+         ===================================================== */
+
+      document.getElementById("btn").addEventListener("click", function () {
+        console.log("Button Clicked");
+        console.log(this); // button element
+      });
+
+      /* =====================================================
+         5️⃣ NORMAL FUNCTION vs ARROW FUNCTION (GLOBAL)
+         ===================================================== */
+
+      function normalFunc() {
+        console.log("Normal Function (Global)");
+        console.log(this); // window
+      }
+
+      const arrowFunc = () => {
+        console.log("Arrow Function (Global)");
+        console.log(this); // window
+      };
+
+      normalFunc();
+      arrowFunc();
+
+      /* =====================================================
+         6️⃣ call(), apply(), bind()
+         ===================================================== */
+
+      function greetCall(city) {
+        console.log(this.name + " from " + city);
+      }
+
+      // call → arguments passed one by one
+      greetCall.call(user, "Delhi");
+
+      // apply → arguments passed as array
+      greetCall.apply(user, ["Delhi"]);
+
+      // bind → returns new function, does not execute immediately
+      const newFunc = greetCall.bind(user, "Delhi");
+      newFunc();
+    </script>
+  </body>
+</html>
